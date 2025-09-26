@@ -1,0 +1,28 @@
+plugins {
+    id 'application'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'dev.langchain4j:langchain4j:0.24.0'
+    implementation 'dev.langchain4j:langchain4j-vertex-ai:0.24.0'
+    implementation 'org.slf4j:slf4j-jdk14:2.0.9'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+}
+
+application {
+    mainClass = 'com.example.app.TextPrompts'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
